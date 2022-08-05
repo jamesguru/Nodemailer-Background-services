@@ -23,7 +23,7 @@ const sendEmails = () => __awaiter(void 0, void 0, void 0, function* () {
             to: 'jameskagunga15@gmail.com',
             subject: 'Here is your task',
             html: data,
-            attachment: [{
+            attachments: [{
                     filename: 'email.txt',
                     content: 'Report everyday'
                 }]

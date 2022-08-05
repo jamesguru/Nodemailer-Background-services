@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
+dotenv.config()
 import cron from 'node-cron';
 import sendEmails from './EmailService/EmailService';
 
@@ -12,7 +13,7 @@ const app = express();
 const sendScheduledEmails = () => {
 
     cron.schedule('*/5 * * * *', async() => {
-        console.log('james')
+        await sendEmails();
       });
 }
 
@@ -28,8 +29,8 @@ app.use((err:Error,req:Request,res:Response)=>{
 })
 
 
-app.listen(8000,() =>{
+app.listen(8800,() =>{
 
 
-    console.log("running on port 8000")
+    console.log("running on port 8800")
 })

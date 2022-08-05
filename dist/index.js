@@ -14,12 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const node_cron_1 = __importDefault(require("node-cron"));
+const EmailService_1 = __importDefault(require("./EmailService/EmailService"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const sendScheduledEmails = () => {
     node_cron_1.default.schedule('*/5 * * * *', () => __awaiter(void 0, void 0, void 0, function* () {
-        console.log('james');
+        yield (0, EmailService_1.default)();
     }));
 };
 sendScheduledEmails();
@@ -28,6 +30,6 @@ app.use((err, req, res) => {
         error: err
     });
 });
-app.listen(8000, () => {
-    console.log("running on port 8000");
+app.listen(8800, () => {
+    console.log("running on port 8800");
 });
