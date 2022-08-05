@@ -21,6 +21,26 @@
         padding: 10px;
         font-size: 18px;
     }
+
+
+    img{
+
+        
+        animation: progress 0.6s ease infinite alternate;
+    }
+
+    @keyframes progress{
+
+        from{
+            opacity: 0;
+        }
+
+        to{
+
+            opacity: 1;
+        }
+        
+    }
 </style>
 <body>
     <table class="container">
@@ -41,7 +61,7 @@
                 <tr>
                     <td>
                        
-                        <img src="https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193__340.jpg" alt="image"/>
+                        <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613__340.jpg" alt="image"/>
                         <h2 style="font-size: 35px;">Hello <%=name%>,</h2>
                         <p style="color: black;font-size: 30px; margin: 10px 0px;font-weight: 400;">Welcome to the Jitu Project </p>
                         <p style="color: black;font-size: 20px;Margin: 10px 0px;font-weight: 400; max-width: 500px;">
